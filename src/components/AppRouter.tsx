@@ -29,8 +29,12 @@ export function AppRouter() {
     }
   };
 
+  const handlePageChange = (page: string) => {
+    setCurrentPage(page as Page);
+  };
+
   return (
-    <Layout currentPage={currentPage} userRole={userRole}>
+    <Layout currentPage={currentPage} userRole={userRole} onPageChange={handlePageChange}>
       {renderPage()}
     </Layout>
   );

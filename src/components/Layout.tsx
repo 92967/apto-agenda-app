@@ -15,9 +15,10 @@ interface LayoutProps {
   children: React.ReactNode;
   currentPage?: string;
   userRole?: 'admin' | 'employee';
+  onPageChange?: (page: string) => void;
 }
 
-export function Layout({ children, currentPage = 'dashboard', userRole = 'admin' }: LayoutProps) {
+export function Layout({ children, currentPage = 'dashboard', userRole = 'admin', onPageChange }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const navigation = [
@@ -67,6 +68,7 @@ export function Layout({ children, currentPage = 'dashboard', userRole = 'admin'
                     ? "bg-primary text-primary-foreground shadow-glow"
                     : "hover:bg-accent/50"
                 )}
+                onClick={() => onPageChange?.(item.href)}
               >
                 <item.icon className="w-5 h-5 mr-3" />
                 {item.name}
