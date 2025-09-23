@@ -2,41 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Sistema de diseño para aplicación de reservas profesional 
+Inspirado en interfaces modernas como Apple Calendar y dashboards premium
+Todos los colores deben ser HSL
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Fondos principales */
+    --background: 240 10% 97%;
+    --foreground: 240 10% 9%;
+    
+    /* Superficie de tarjetas con efecto glassmorphism */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 240 10% 9%;
+    
+    /* Popovers y menús */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 10% 9%;
+    
+    /* Color primario - azul profesional profundo */
+    --primary: 221 83% 53%;
+    --primary-light: 221 70% 65%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secundario - tonos complementarios */
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 10%;
+    
+    /* Colores apagados para textos secundarios */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    
+    /* Acentos para elementos destacados */
+    --accent: 221 70% 95%;
+    --accent-foreground: 221 83% 53%;
+    
+    /* Estados de éxito, advertencia y error */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Bordes e inputs */
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 221 83% 53%;
+    
+    /* Gradientes para elementos destacados */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 70% 65%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(240 5% 96% / 0.4));
+    --gradient-hero: linear-gradient(135deg, hsl(221 83% 53%), hsl(242 78% 58%));
+    
+    /* Sombras elegantes */
+    --shadow-soft: 0 2px 10px hsl(240 10% 9% / 0.1);
+    --shadow-medium: 0 4px 20px hsl(240 10% 9% / 0.15);
+    --shadow-strong: 0 10px 40px hsl(240 10% 9% / 0.2);
+    --shadow-glow: 0 0 30px hsl(221 83% 53% / 0.3);
+    
+    /* Animaciones suaves */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +87,58 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Fondos principales para modo oscuro */
+    --background: 240 10% 4%;
+    --foreground: 240 5% 96%;
+    
+    /* Superficie de tarjetas */
+    --card: 240 10% 6%;
+    --card-foreground: 240 5% 96%;
+    
+    /* Popovers y menús */
+    --popover: 240 10% 6%;
+    --popover-foreground: 240 5% 96%;
+    
+    /* Color primario ajustado para modo oscuro */
+    --primary: 221 70% 65%;
+    --primary-light: 221 60% 75%;
+    --primary-foreground: 240 10% 4%;
+    
+    /* Secundario para modo oscuro */
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 240 5% 96%;
+    
+    /* Colores apagados para modo oscuro */
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 64%;
+    
+    /* Acentos para modo oscuro */
+    --accent: 240 4% 16%;
+    --accent-foreground: 221 70% 65%;
+    
+    /* Estados ajustados para modo oscuro */
+    --success: 142 71% 45%;
+    --success-foreground: 240 5% 96%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 240 10% 4%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 240 5% 96%;
+    
+    /* Bordes e inputs para modo oscuro */
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 221 70% 65%;
+    
+    /* Gradientes ajustados para modo oscuro */
+    --gradient-primary: linear-gradient(135deg, hsl(221 70% 65%), hsl(221 60% 75%));
+    --gradient-card: linear-gradient(145deg, hsl(240 10% 6% / 0.8), hsl(240 4% 16% / 0.4));
+    --gradient-hero: linear-gradient(135deg, hsl(221 70% 65%), hsl(242 68% 68%));
+    
+    /* Sombras ajustadas para modo oscuro */
+    --shadow-soft: 0 2px 10px hsl(240 10% 4% / 0.5);
+    --shadow-medium: 0 4px 20px hsl(240 10% 4% / 0.6);
+    --shadow-strong: 0 10px 40px hsl(240 10% 4% / 0.8);
+    --shadow-glow: 0 0 30px hsl(221 70% 65% / 0.4);
   }
 }
 
