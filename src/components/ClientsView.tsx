@@ -205,13 +205,12 @@ export function ClientsView() {
                   <div>
                     <div className="flex items-center gap-2">
                       <h3 className="font-semibold text-foreground">{client.name}</h3>
-                      <Badge 
-                        variant="outline" 
-                        className={getStatusColor(client.status)}
-                      >
-                      >
-                        {client.status === 'active' ? 'Activo' : 'Inactivo'}
-                      </Badge>
+                       <Badge 
+                         variant="outline" 
+                         className={getStatusColor(client.status)}
+                       >
+                         {client.status === 'active' ? 'Activo' : 'Inactivo'}
+                       </Badge>
                     </div>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mt-1">
                       <span className="flex items-center gap-1">

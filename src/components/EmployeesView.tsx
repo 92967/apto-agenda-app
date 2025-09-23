@@ -233,13 +233,12 @@ export function EmployeesView() {
                       >
                         {employee.role === 'admin' ? 'Administrador' : 'Empleado'}
                       </Badge>
-                      <Badge 
-                        variant="outline" 
-                        className={getStatusColor(employee.status)}
-                      >
-                      >
-                        {employee.status === 'active' ? 'Activo' : 'Inactivo'}
-                      </Badge>
+                       <Badge 
+                         variant="outline" 
+                         className={getStatusColor(employee.status)}
+                       >
+                         {employee.status === 'active' ? 'Activo' : 'Inactivo'}
+                       </Badge>
                     </div>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mt-1">
                       <span className="flex items-center gap-1">
